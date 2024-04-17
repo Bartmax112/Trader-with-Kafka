@@ -3,15 +3,9 @@ services:
   trader-data-generator:
     image: dragho112/trader-data-generator:0.0.1-SNAPSHOT
     container_name: trader-data-generator
-    depends_on:
-      kafka-1:
-        condition: service_healthy
-      kafka-2:
-        condition: service_healthy
-      kafka-3:
-        condition: service_healthy
-      kafka-ui:
-        condition: service_healthy
+    # depends_on:
+    #   kafka-cluster:
+    #     condition: service_healthy
     restart: on-failure
 
   # kafka-cluster:
