@@ -23,7 +23,7 @@ import com.vaadin.flow.router.Route;
  * The main view contains a text field for getting the user name and a button
  * that shows a greeting message in a notification.
  */
-@Route
+@Route("hello")
 public class MainView extends VerticalLayout {
 
     /**
@@ -38,7 +38,7 @@ public class MainView extends VerticalLayout {
     public MainView(@Autowired GreetService service) {
 
         // Use TextField for standard text input
-        TextField textField = new TextField("Your name");
+        TextField textField = new TextField("Your names");
         textField.addClassName("bordered");
 
         // Button click listeners can be defined as lambda expressions

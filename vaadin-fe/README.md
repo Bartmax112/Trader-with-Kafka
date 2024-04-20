@@ -71,7 +71,11 @@ Vaadin web applications are full-stack and include both client-side and server-s
 
 
 # Notes
-how to run:
+
+how to run in dev mode:
+mvn spring-boot:run
+
+how to run in docker:
 
 docker build -t vaadin-fe .
 docker run -ti -p 8090:8080 vaadin-fe
