@@ -8,6 +8,16 @@ services:
     #     condition: service_healthy
     restart: on-failure
 
+  trader-data-receiver:
+    image: dragho112/trader-data-receiver:0.0.1-SNAPSHOT
+    container_name: trader-data-receiver
+    depends_on:
+      kafka-cluster:
+        condition: service_healthy
+      trader-data-generator:
+        condition: service_healthy
+    restart: on-failure
+
   # kafka-cluster:
 
   kafka-1:
