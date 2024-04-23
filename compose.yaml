@@ -1,4 +1,4 @@
-version: '3'
+
 services:
   trader-data-generator:
     image: dragho112/trader-data-generator:0.0.1-SNAPSHOT
@@ -9,10 +9,12 @@ services:
     restart: on-failure
 
   trader-data-receiver:
-    image: dragho112/trader-data-receiver:0.0.1-SNAPSHOT
+    image: dragho112/trader-data-receiver:latest
     container_name: trader-data-receiver
+    ports:
+      - "8080:8080"
     depends_on:
-      kafka-cluster:
+      kafka-ui:
         condition: service_healthy
       trader-data-generator:
         condition: service_healthy
@@ -75,10 +77,16 @@ services:
     container_name: kafka-ui
     image: 'provectuslabs/kafka-ui:latest'
     ports:
-      - "8080:8080"
+      - "8090:8080"
     environment:
       - KAFKA_CLUSTERS_0_BOOTSTRAP_SERVERS=kafka-1:9092
       - KAFKA_CLUSTERS_0_NAME=r4zt_wrqTRuT7W2NJsB_GA
+    healthcheck:
+      test: curl --fail http://localhost:8090/ || exit 1
+      interval: 40s
+      timeout: 30s
+      retries: 3
+      start_period: 60s
 
   # banking-db:
   #   image: postgres
