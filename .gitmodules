@@ -1,3 +1,6 @@
-[submodule "trader-data-receiver"]
-	path = trader-data-receiver
+[submodule "trader-data-consumer"]
+	path = trader-data-consumer
+	url = https://github.com/Bartmax112/trader-data-consumer.git
+[submodule "trader-data-generator"]
+	path = trader-data-generator
 	url = https://github.com/Bartmax112/Trader-with-Kafka.git
