@@ -1,7 +1,7 @@
 
 services:
   trader-data-generator:
-    image: dragho112/trader-data-generator:0.0.1-SNAPSHOT
+    image: dragho112/trader-data-generator
     container_name: trader-data-generator
     # depends_on:
     #   kafka-cluster:
@@ -9,14 +9,12 @@ services:
     restart: on-failure
 
   trader-data-receiver:
-    image: dragho112/trader-data-receiver:latest
+    image: dragho112/trader-data-receiver
     container_name: trader-data-receiver
     ports:
       - "8080:8080"
     depends_on:
       kafka-ui:
-        condition: service_healthy
-      trader-data-generator:
         condition: service_healthy
     restart: on-failure
 
