@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bart</groupId>
-	<artifactId>trader-data-generator</artifactId>
+	<artifactId>trader-data-producer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>trader-data-generator</name>
 	<description>Demo project for Spring Boot</description>
