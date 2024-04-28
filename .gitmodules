@@ -1,0 +1,3 @@
+[submodule "trader-data-receiver"]
+	path = trader-data-receiver
+	url = https://github.com/Bartmax112/Trader-with-Kafka.git
