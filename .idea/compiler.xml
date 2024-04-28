@@ -10,13 +10,9 @@
         <module name="trader-data-generator" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="spring-skeleton" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="spring-skeleton" options="-parameters" />
       <module name="trader-data-generator" options="-parameters" />
       <module name="vaadin-fe" options="-parameters" />
     </option>
