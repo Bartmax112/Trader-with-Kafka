@@ -4,3 +4,6 @@
 [submodule "trader-data-generator"]
 	path = trader-data-generator
 	url = https://github.com/Bartmax112/Trader-with-Kafka.git
+[submodule "trader-data-producer"]
+	path = trader-data-producer
+	url = git@github.com:Bartmax112/trader-data-producer.git
